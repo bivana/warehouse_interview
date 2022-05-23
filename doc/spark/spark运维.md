@@ -20,3 +20,9 @@ local[*]:启动跟 cpu 数目相同的 executor
 (2)细粒度模式(Fine-grained Mode):鉴于粗粒度模式会造成大量资源 浪费，Spark On Mesos 还提供了另外一种调度模式:细粒度模式，这种模式 类似于现在的云计算，思想是按需分配。
 
 
+# Spark 如何保证宕机迅速恢复?
+
+适当增加 spark standby master
+编写 shell 脚本，定期检测 master 状态，出现宕机后对 master 进行重启操作
+
+# Spark 主备切换机制原理知道吗？
